@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Validation</title>
+    </head>
+    <body>
+        <h2 style="color: #640df1; text-align: center; align-items: center;">Signup form</h2>
+        
+        <form onsubmit="return validateform()">
+        <div style="display: flex; justify-content: center; align-items: center; height: 40vh;">
+        <p style="padding: 20px; width: 200px; border: 2px solid #640df1; border-radius: 8px;  background: pink;">
+        Username:
+        <input type="text" id="username"></br></br>
+         Password:
+        <input type="password" id="password"></br></br>
+        Gender<input type="radio" name="gender" id="Male">M
+        <input type="radio" name="gender" id="Female">F
+        <input type="radio" name="gender" id="Others">Others</br></br>
+        Country:<select id="country">
+            <option value="USA">USA</option>
+            <option value="China">China</option>
+            <option value="Nepal">Nepal</option>
+            <option value="India">India</option>
+        </select>
+        </p>
+    </div>
+        <script>
+            function validateform(){
+                const username=document.getElementById("username").value.trim();
+                const passsword=document.getElementById("passsword").value.trim();
+                const Gender=document.querySelector('input[name="gender"]').checked;
+                const country=document.getElementById("country").value;
+
+                if(username===""){
+                    alert"Username is required";
+                    return false;
+                }
+                if(password.length<5){
+                    alert" Password should be atleast 5 character long";
+                    return false;
+                }
+                if(!gender){
+                    alert"Please select gender";
+                    return false;
+                }
+                if(country==""){
+                    alert "Please select a country";
+                    return false;
+                }
+                else{
+                    alert "Form submitted successfully";
+                    return true;
+                }
+            }
+        </script>
+    </body>
+</html>
